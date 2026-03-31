@@ -1,0 +1,12 @@
+[
+  {"id": 1, "name": "Classic T-Shirt", "sku": "TS-001", "category": "Tops"},
+  {"id": 2, "name": "Slim Fit Jeans", "sku": "JN-002", "category": "Bottoms"},
+  {"id": 3, "name": "Hoodie (Black)", "sku": "HD-003", "category": "Outerwear"},
+  {"id": 4, "name": "Summer Shorts", "sku": "SH-004", "category": "Bottoms"},
+  {"id": 5, "name": "Polo Shirt", "sku": "PS-005", "category": "Tops"},
+  {"id": 6, "name": "Denim Jacket", "sku": "DJ-006", "category": "Outerwear"},
+  {"id": 7, "name": "Chino Pants", "sku": "CP-007", "category": "Bottoms"},
+  {"id": 8, "name": "Graphic Tee", "sku": "GT-008", "category": "Tops"},
+  {"id": 9, "name": "Formal Shirt", "sku": "FS-009", "category": "Tops"},
+  {"id": 10, "name": "Sweatpants", "sku": "SP-010", "category": "Bottoms"}
+]

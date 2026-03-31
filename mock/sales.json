@@ -1,0 +1,107 @@
+[
+    {
+        "date": "2023-10-20",
+        "product_id": 1,
+        "quantity": 100
+    },
+    {
+        "date": "2023-10-21",
+        "product_id": 1,
+        "quantity": 110
+    },
+    {
+        "date": "2023-10-22",
+        "product_id": 1,
+        "quantity": 105
+    },
+    {
+        "date": "2023-10-23",
+        "product_id": 1,
+        "quantity": 120
+    },
+    {
+        "date": "2023-10-24",
+        "product_id": 1,
+        "quantity": 115
+    },
+    {
+        "date": "2023-10-25",
+        "product_id": 1,
+        "quantity": 130
+    },
+    {
+        "date": "2023-10-26",
+        "product_id": 1,
+        "quantity": 250
+    },
+    {
+        "date": "2023-10-20",
+        "product_id": 2,
+        "quantity": 10
+    },
+    {
+        "date": "2023-10-21",
+        "product_id": 2,
+        "quantity": 12
+    },
+    {
+        "date": "2023-10-22",
+        "product_id": 2,
+        "quantity": 8
+    },
+    {
+        "date": "2023-10-23",
+        "product_id": 2,
+        "quantity": 15
+    },
+    {
+        "date": "2023-10-24",
+        "product_id": 2,
+        "quantity": 10
+    },
+    {
+        "date": "2023-10-25",
+        "product_id": 2,
+        "quantity": 12
+    },
+    {
+        "date": "2023-10-26",
+        "product_id": 2,
+        "quantity": 10
+    },
+    {
+        "date": "2023-10-20",
+        "product_id": 3,
+        "quantity": 50
+    },
+    {
+        "date": "2023-10-21",
+        "product_id": 3,
+        "quantity": 55
+    },
+    {
+        "date": "2023-10-22",
+        "product_id": 3,
+        "quantity": 45
+    },
+    {
+        "date": "2023-10-23",
+        "product_id": 3,
+        "quantity": 60
+    },
+    {
+        "date": "2023-10-24",
+        "product_id": 3,
+        "quantity": 50
+    },
+    {
+        "date": "2023-10-25",
+        "product_id": 3,
+        "quantity": 55
+    },
+    {
+        "date": "2023-10-26",
+        "product_id": 3,
+        "quantity": 65
+    }
+]

@@ -1,0 +1,872 @@
+[
+  {
+    "production_id": "17244",
+    "production_code": "17244",
+    "product_name": "Product 17244",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Ahmed",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Sohan",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Vikram",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Farhan",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 1,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Imran",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Ramesh",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Sunil",
+        "due_days": 10,
+        "submitted_qty": 300,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "1945",
+    "production_code": "1945",
+    "product_name": "Product 1945",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Ahmed",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Vikram",
+            "due_days": 3,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Sohan",
+            "due_days": 1,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Rahul",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 2,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Amit",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Ramesh",
+        "due_days": 5,
+        "submitted_qty": 150,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Sunil",
+        "due_days": 9,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "1945T",
+    "production_code": "1945T",
+    "product_name": "Product 1945T",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Imran",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Ahmed",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Rahul",
+            "due_days": 1,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Zaid",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Amit",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Deepak",
+        "due_days": 4,
+        "submitted_qty": 150,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Kapil",
+        "due_days": 9,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "TEST",
+    "production_code": "TEST",
+    "product_name": "Product TEST",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Imran",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Vikram",
+            "due_days": 3,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Imran",
+            "due_days": 3,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 3,
+            "submitted_qty": 100,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Vikram",
+            "due_days": 2,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 3,
+        "submitted_qty": 100,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Kapil",
+        "due_days": 10,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "DEMO",
+    "production_code": "DEMO",
+    "product_name": "Product DEMO",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Imran",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Farhan",
+            "due_days": 1,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Farhan",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Zaid",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Imran",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Zaid",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 3,
+        "submitted_qty": 150,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Arjun",
+        "due_days": 8,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "2082",
+    "production_code": "2082",
+    "product_name": "Product 2082",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Farhan",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Zaid",
+            "due_days": 1,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Ahmed",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Amit",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 100,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Manoj",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Varun",
+        "due_days": 7,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208211",
+    "production_code": "208211",
+    "product_name": "Product 208211",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Imran",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Imran",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Rahul",
+            "due_days": 2,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Zaid",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Sohan",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Ahmed",
+            "due_days": 2,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 4,
+        "submitted_qty": 300,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Varun",
+        "due_days": 8,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208213",
+    "production_code": "208213",
+    "product_name": "Product 208213",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Zaid",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Imran",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Amit",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Imran",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Rahul",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Ramesh",
+        "due_days": 4,
+        "submitted_qty": 100,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Sunil",
+        "due_days": 8,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208217",
+    "production_code": "208217",
+    "product_name": "Product 208217",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Farhan",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Ahmed",
+            "due_days": 1,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Imran",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Imran",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Amit",
+            "due_days": 2,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 5,
+        "submitted_qty": 0,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Kapil",
+        "due_days": 8,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208216",
+    "production_code": "208216",
+    "product_name": "Product 208216",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Ahmed",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Zaid",
+            "due_days": 1,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Rahul",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Sohan",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Sohan",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Farhan",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Manoj",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Sunil",
+        "due_days": 10,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208212",
+    "production_code": "208212",
+    "product_name": "Product 208212",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Zaid",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Farhan",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Sohan",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Ahmed",
+            "due_days": 1,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Farhan",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 3,
+        "submitted_qty": 150,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Varun",
+        "due_days": 9,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "208218",
+    "production_code": "208218",
+    "product_name": "Product 208218",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Ahmed",
+        "due_days": 3,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Farhan",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Ahmed",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Imran",
+            "due_days": 3,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Vikram",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Ramesh",
+        "due_days": 4,
+        "submitted_qty": 300,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Kapil",
+        "due_days": 10,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "838511",
+    "production_code": "838511",
+    "product_name": "Product 838511",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Farhan",
+        "due_days": 1,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Rahul",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Vikram",
+            "due_days": 3,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Ahmed",
+            "due_days": 5,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Farhan",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Sohan",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Deepak",
+        "due_days": 3,
+        "submitted_qty": 0,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Varun",
+        "due_days": 10,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "838512",
+    "production_code": "838512",
+    "product_name": "Product 838512",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Imran",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Zaid",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Amit",
+            "due_days": 4,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Vikram",
+            "due_days": 5,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Rahul",
+            "due_days": 2,
+            "submitted_qty": 300,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Imran",
+            "due_days": 5,
+            "submitted_qty": 150,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Suresh",
+        "due_days": 3,
+        "submitted_qty": 100,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Varun",
+        "due_days": 9,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  },
+  {
+    "production_id": "838513",
+    "production_code": "838513",
+    "product_name": "Product 838513",
+    "status": "In Progress",
+    "subprocesses": {
+      "embroidery": {
+        "karigar_name": "Farhan",
+        "due_days": 2,
+        "submitted_qty": 300,
+        "total_qty": 300,
+        "items": {
+          "touching": {
+            "karigar_name": "Ahmed",
+            "due_days": 1,
+            "submitted_qty": 150,
+            "total_qty": 300
+          },
+          "embroidery": {
+            "karigar_name": "Farhan",
+            "due_days": 1,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "latkan": {
+            "karigar_name": "Zaid",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "outing": {
+            "karigar_name": "Imran",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          },
+          "pleating": {
+            "karigar_name": "Amit",
+            "due_days": 4,
+            "submitted_qty": 0,
+            "total_qty": 300
+          }
+        }
+      },
+      "stitching": {
+        "karigar_name": "Manoj",
+        "due_days": 5,
+        "submitted_qty": 150,
+        "total_qty": 300
+      },
+      "finishing": {
+        "karigar_name": "Kapil",
+        "due_days": 8,
+        "submitted_qty": 0,
+        "total_qty": 300
+      }
+    }
+  }
+]

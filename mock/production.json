@@ -1,0 +1,26 @@
+[
+    {
+        "id": "PP-2023-001",
+        "product_id": 1,
+        "start_date": "2023-10-01",
+        "end_date": "2023-10-10",
+        "status": "Completed",
+        "progress": 100
+    },
+    {
+        "id": "PP-2023-002",
+        "product_id": 3,
+        "start_date": "2023-10-15",
+        "end_date": "2023-10-30",
+        "status": "Running",
+        "progress": 65
+    },
+    {
+        "id": "PP-2023-003",
+        "product_id": 5,
+        "start_date": "2023-11-01",
+        "end_date": "2023-11-15",
+        "status": "Pending",
+        "progress": 0
+    }
+]

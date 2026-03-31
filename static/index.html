@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Monitoring System</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="background-animation" id="bg-animation"></div>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="logo">
+                <h1>🏭 Production<span class="highlight">Monitor</span></h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" onclick="switchPage('dashboard')">Dashboard</a>
+                <a href="#" class="nav-link" onclick="switchPage('job-work')">Job Work</a>
+            </nav>
+            <div class="status-indicator">
+                <span class="dot"></span> Live System
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <main>
+            <!-- DASHBOARD PAGE -->
+            <div id="dashboard-page">
+                <!-- ⚠️ ATTENTION NEEDED -->
+                <section id="critical-section" class="full-width" style="margin-bottom: 40px;">
+                    <div class="section-header"
+                        style="margin-bottom: 20px; border-bottom: 1px solid var(--alert-critical); padding-bottom: 15px;">
+                        <h2 style="color: var(--alert-critical); font-size: 1.5rem;">⚠️ High Attention Needed</h2>
+                        <p class="subtitle" style="color: var(--text-secondary);">Jobs with High Demand but NOT yet
+                            production-ready or stopped.</p>
+                    </div>
+                    <div id="critical-grid" class="product-grid-container">
+                        <!-- Critical cards injected by JS -->
+                    </div>
+                </section>
+
+                <!-- 🏗️ PRODUCTION PIPELINE -->
+                <section id="pipeline-section" class="full-width">
+                    <div class="section-header"
+                        style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h2 style="color: var(--accent-color); font-size: 1.5rem;">🏗️ Production Pipeline</h2>
+                            <p class="subtitle" style="color: var(--text-secondary);">Active production and scheduled
+                                planning.
+                            </p>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="dashboard-search" placeholder="Search Production Code..."
+                                class="search-input">
+                        </div>
+                    </div>
+                    <div id="pipeline-grid" class="product-grid-container">
+                        <!-- Standard/Pipeline cards injected by JS -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- JOB WORK PAGE -->
+            <div id="job-work-page" style="display: none;">
+                <div class="section-header"
+                    style="margin-bottom: 20px; border-bottom: 1px solid var(--accent-color); padding-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h2 style="color: var(--accent-color); font-size: 1.5rem;">🧵 Job Work Tracking</h2>
+                        <p class="subtitle" style="color: var(--text-secondary);">Monitor subprocesses: Embroidery,
+                            Stitching, Touching, Finishing.</p>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" id="job-work-search" placeholder="Search Production Code..."
+                            class="search-input">
+                    </div>
+                </div>
+                <div id="job-work-grid" class="product-grid-container">
+                    <!-- Job work cards injected by JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <div id="modal-title-section">
+                    <h2 id="modal-product-name">Product Name</h2>
+                    <span id="modal-product-sku" class="product-sku">SKU-001</span>
+                </div>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Top Metrics -->
+                <div class="modal-metrics">
+                    <div class="modal-card">
+                        <span class="label">Total Stock</span>
+                        <span class="value" id="modal-total-stock">--</span>
+                    </div>
+                    <div class="modal-card">
+                        <span class="label">Reserved</span>
+                        <span class="value" id="modal-reserved-stock">--</span>
+                    </div>
+                    <div class="modal-card">
+                        <span class="label">Production Due</span>
+                        <span class="value" id="modal-due-date">--</span>
+                    </div>
+                </div>
+
+                <!-- Production Progress -->
+                <div class="section-block">
+                    <h4>📊 Production Progress</h4>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>Status: <span id="modal-status-text">Running</span></span>
+                            <span id="modal-progress-percent">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="modal-progress-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subpart Stocks Table -->
+                <div class="section-block">
+                    <h4>🧵 Manufacturing Details & Subpart Stocks</h4>
+                    <div class="table-container">
+                        <table class="modal-table">
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Status</th>
+                                    <th>Stock / WIP</th>
+                                    <th>Target</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal-subparts-body">
+                                <!-- Injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="/static/js/app.js?v=19"></script>
+</body>
+
+</html>
