@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# macOS
+.DS_Store
+
+# Data files (Optional, but often unwanted in git)
+*.xlsx
+*.xls
+# *.csv
+
+# Node (if any)
+node_modules/
+
+# Logs
+*.log

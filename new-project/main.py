@@ -20,18 +20,8 @@ try:
     print("Loading Real Data from Excel...")
     products, production_plans, inventory, sales = load_excel_data()
     print(f"Loaded {len(products)} products from Excel.")
-    
-    # Fallback to Mock if 0 products loaded
-    if not products:
-        print("Excel seems empty or missing. Falling back to Mock JSON data...")
-        with open('mock/products.json', 'r') as f: products = json.load(f)
-        with open('mock/production.json', 'r') as f: production_plans = json.load(f)
-        with open('mock/inventory.json', 'r') as f: inventory = json.load(f)
-        with open('mock/sales.json', 'r') as f: sales = json.load(f)
-        print(f"Loaded {len(products)} products from Mock JSON.")
-        
 except Exception as e:
-    print(f"Failed to load data: {e}. using empty defaults.")
+    print(f"Failed to load Excel: {e}. using empty defaults.")
     products, production_plans, inventory, sales = [], [], [], []
 
 @app.get("/")

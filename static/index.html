@@ -1,163 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Production Monitoring System</title>
+    <title>Radha Studio | Production Dashboard</title>
     <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.1">
 </head>
-
 <body>
-    <div class="background-animation" id="bg-animation"></div>
-    <div class="dashboard-container">
-        <!-- Header -->
-        <header class="glass-panel">
-            <div class="logo">
-                <h1>🏭 Production<span class="highlight">Monitor</span></h1>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <img src="/static/logo.png?v=3" alt="Radha Studio">
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active" onclick="switchPage('dashboard', this)">
+                <i class="fa-solid fa-chart-line" style="color: #3b82f6;"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" onclick="switchPage('job-work', this)">
+                <i class="fa-solid fa-hourglass" style="color: #f59e0b;"></i>
+                <span>Job Work</span>
+            </a>
+            <a href="#" class="nav-item" onclick="switchPage('analytics', this)">
+                <i class="fa-solid fa-brain" style="color: #ec4899;"></i>
+                <span>Intelligence</span>
+            </a>
+            <a href="#" class="nav-item" onclick="switchPage('team', this)">
+                <i class="fa-solid fa-users" style="color: #a855f7;"></i>
+                <span>Karigars</span>
+            </a>
+            <a href="#" class="nav-item" onclick="switchPage('settings', this)">
+                <i class="fa-solid fa-gamepad" style="color: #f43f5e;"></i>
+                <span>Control Center</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="main-content">
+        <header class="header-row dashboard-header">
+            <div class="header-main-info">
+                <div class="section-head">
+                    <i class="fa-solid fa-layer-group" style="color: #60a5fa; font-size: 1.5rem;"></i>
+                    <h2>Studio Dashboard</h2>
+                </div>
+                <div class="sub-label"><i class="fa-solid fa-clock-rotate-left"></i> Monitoring 128 active items in pipeline</div>
             </div>
-            <nav class="nav-links">
-                <a href="#" class="nav-link active" onclick="switchPage('dashboard')">Dashboard</a>
-                <a href="#" class="nav-link" onclick="switchPage('job-work')">Job Work</a>
-            </nav>
-            <div class="status-indicator">
-                <span class="dot"></span> Live System
+
+            <div class="header-controls">
+                <div class="search-bar-modern">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="dashboard-search" placeholder="Quick search product..." oninput="handleSearch(this.value)">
+                    <button class="sync-btn" onclick="randomizeData()" style="margin-right: 10px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+                        <i class="fa-solid fa-dice"></i> Randomize Pulse
+                    </button>
+                    <button class="sync-btn" onclick="syncData()">
+                        <i class="fa-solid fa-arrows-rotate"></i> Sync Cloud
+                    </button>
+                </div>
             </div>
         </header>
 
-        <!-- Main Layout -->
-        <main>
-            <!-- DASHBOARD PAGE -->
-            <div id="dashboard-page">
-                <!-- ⚠️ ATTENTION NEEDED -->
-                <section id="critical-section" class="full-width" style="margin-bottom: 40px;">
-                    <div class="section-header"
-                        style="margin-bottom: 20px; border-bottom: 1px solid var(--alert-critical); padding-bottom: 15px;">
-                        <h2 style="color: var(--alert-critical); font-size: 1.5rem;">⚠️ High Attention Needed</h2>
-                        <p class="subtitle" style="color: var(--text-secondary);">Jobs with High Demand but NOT yet
-                            production-ready or stopped.</p>
-                    </div>
-                    <div id="critical-grid" class="product-grid-container">
-                        <!-- Critical cards injected by JS -->
-                    </div>
-                </section>
+        <section id="dashboard-view">
+            <div id="product-grid" class="card-grid">
+                <!-- Injected via app.js -->
+            </div>
+        </section>
 
-                <!-- 🏗️ PRODUCTION PIPELINE -->
-                <section id="pipeline-section" class="full-width">
-                    <div class="section-header"
-                        style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <h2 style="color: var(--accent-color); font-size: 1.5rem;">🏗️ Production Pipeline</h2>
-                            <p class="subtitle" style="color: var(--text-secondary);">Active production and scheduled
-                                planning.
-                            </p>
+        <section id="job-work-view" style="display: none;">
+            <header class="header-row dashboard-header job-work-header">
+                <div class="header-main-info">
+                    <div class="section-head">
+                        <i class="fa-solid fa-hourglass-half" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                        <h2 id="job-work-title">Job Work Control</h2>
+                    </div>
+                    <div class="sub-label"><i class="fa-solid fa-microchip"></i> Real-time subprocess tracking and karigar attribution.</div>
+                </div>
+
+                <div class="header-controls">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="search-field" id="job-work-search" placeholder="Search Production Code..." oninput="handleJobWorkSearch(this.value)">
+                    </div>
+                    <button class="sync-btn" onclick="syncData()" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Refresh Jobs</span>
+                    </button>
+                </div>
+            </header>
+            <div id="job-work-grid" class="card-grid">
+                <!-- Injected via app.js -->
+            </div>
+        </section>
+
+        <section id="analytics-view" style="display: none;">
+            <header class="header-row">
+                <div class="section-head">
+                    <i class="fa-solid fa-brain" style="color: #ec4899; font-size: 1.5rem;"></i>
+                    <h2>Market Intelligence</h2>
+                </div>
+                <div class="sub-label">Predictive insights and production efficiency metrics.</div>
+            </header>
+
+            <div class="analytics-grid">
+                <!-- 1. Demand Trends -->
+                <div class="intel-card">
+                    <div class="intel-header">
+                        <h3>📈 Demand Trends</h3>
+                        <div class="intel-stat" id="stat-demand-trend">+12%</div>
+                    </div>
+                    <div class="intel-description">Total job volume vs last snapshot.</div>
+                    <div class="chart-container" id="demand-chart">
+                        <!-- Bars injected by JS -->
+                    </div>
+                </div>
+
+                <!-- 2. Delay Analysis -->
+                <div class="intel-card">
+                    <div class="intel-header">
+                        <h3>🧵 Stage Bottlenecks</h3>
+                    </div>
+                    <div class="intel-description" id="bottleneck-text">Stitching causing delay in 45% jobs.</div>
+                    <div class="bar-chart-vertical" id="stage-analysis">
+                        <!-- Progress bars injected by JS -->
+                    </div>
+                </div>
+
+                <!-- 3. Worker Performance -->
+                <div class="intel-card">
+                    <div class="intel-header">
+                        <h3>👥 Karigar Performance</h3>
+                    </div>
+                    <div class="intel-description">Ranked by completion speed and accuracy.</div>
+                    <div id="worker-rankings" class="rankings-list">
+                        <!-- List injected by JS -->
+                    </div>
+                </div>
+
+                <!-- 4. Delay Insights -->
+                <div class="intel-card warning-glow">
+                    <div class="intel-header">
+                        <h3>⏱ Status: Critical LAG</h3>
+                        <div class="intel-stat red" id="lag-count">3 Jobs</div>
+                    </div>
+                    <div class="intel-description" id="lag-percent">15% of total active production is lagging.</div>
+                    <div class="alert-strip">Action required: Reassign high-priority sub-items.</div>
+                </div>
+
+                <!-- 5. Efficiency Overview -->
+                <div class="intel-card">
+                    <div class="intel-header">
+                        <h3>📊 Overall Efficiency</h3>
+                    </div>
+                    <div class="efficiency-row">
+                        <div class="eff-item">
+                            <div class="eff-val" id="total-jobs-count">12</div>
+                            <div class="eff-lab">Total Jobs</div>
                         </div>
-                        <div class="search-container">
-                            <input type="text" id="dashboard-search" placeholder="Search Production Code..."
-                                class="search-input">
+                        <div class="eff-item">
+                            <div class="eff-val" id="avg-completion-pct">65%</div>
+                            <div class="eff-lab">Avg Completion</div>
                         </div>
                     </div>
-                    <div id="pipeline-grid" class="product-grid-container">
-                        <!-- Standard/Pipeline cards injected by JS -->
+                </div>
+
+                <!-- 6. Critical Alerts -->
+                <div class="intel-card">
+                    <div class="intel-header">
+                        <h3>🚨 Production Alerts</h3>
                     </div>
-                </section>
+                    <div id="intel-alerts" class="alerts-container">
+                        <!-- Alerts injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team-view" style="display: none;">
+            <header class="header-row">
+                <div class="section-head">
+                    <i class="fa-solid fa-users-gear" style="color: #a855f7; font-size: 1.5rem;"></i>
+                    <h2>Karigar Control Panel</h2>
+                </div>
+                <div class="sub-label">Manage workforce, track performance, and assign jobs.</div>
+            </header>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterTeam('all', this)">All Karigars</button>
+                <button class="filter-btn" onclick="filterTeam('embroidery', this)">Embroidery</button>
+                <button class="filter-btn" onclick="filterTeam('stitching', this)">Stitching</button>
+                <button class="filter-btn" onclick="filterTeam('finishing', this)">Finishing</button>
             </div>
 
-            <!-- JOB WORK PAGE -->
-            <div id="job-work-page" style="display: none;">
-                <div class="section-header"
-                    style="margin-bottom: 20px; border-bottom: 1px solid var(--accent-color); padding-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <h2 style="color: var(--accent-color); font-size: 1.5rem;">🧵 Job Work Tracking</h2>
-                        <p class="subtitle" style="color: var(--text-secondary);">Monitor subprocesses: Embroidery,
-                            Stitching, Touching, Finishing.</p>
-                    </div>
-                    <div class="search-container">
-                        <input type="text" id="job-work-search" placeholder="Search Production Code..."
-                            class="search-input">
-                    </div>
-                </div>
-                <div id="job-work-grid" class="product-grid-container">
-                    <!-- Job work cards injected by JS -->
-                </div>
+            <div id="team-grid" class="card-grid">
+                <!-- Injected via app.js -->
             </div>
-        </main>
-    </div>
+        </section>
 
-    <!-- Product Details Modal -->
-    <div id="product-modal" class="modal-overlay">
-        <div class="modal-content glass-panel">
-            <div class="modal-header">
-                <div id="modal-title-section">
-                    <h2 id="modal-product-name">Product Name</h2>
-                    <span id="modal-product-sku" class="product-sku">SKU-001</span>
+        <section id="settings-view" style="display: none;">
+            <header class="header-row">
+                <div class="section-head">
+                    <i class="fa-solid fa-gamepad" style="color: #f43f5e; font-size: 1.5rem;"></i>
+                    <h2>Control Center</h2>
                 </div>
-                <button class="close-btn" onclick="closeModal()">×</button>
-            </div>
+                <div class="sub-label">Central Command for Job Assignment & Workforce Optimization.</div>
+            </header>
 
-            <div class="modal-body">
-                <!-- Top Metrics -->
-                <div class="modal-metrics">
-                    <div class="modal-card">
-                        <span class="label">Total Stock</span>
-                        <span class="value" id="modal-total-stock">--</span>
-                    </div>
-                    <div class="modal-card">
-                        <span class="label">Reserved</span>
-                        <span class="value" id="modal-reserved-stock">--</span>
-                    </div>
-                    <div class="modal-card">
-                        <span class="label">Production Due</span>
-                        <span class="value" id="modal-due-date">--</span>
-                    </div>
-                </div>
-
-                <!-- Production Progress -->
-                <div class="section-block">
-                    <h4>📊 Production Progress</h4>
-                    <div class="progress-section">
-                        <div class="progress-label">
-                            <span>Status: <span id="modal-status-text">Running</span></span>
-                            <span id="modal-progress-percent">0%</span>
+            <div class="control-grid">
+                <!-- 1. Quick Info & Status -->
+                <div class="control-panel status-panel">
+                    <h3><i class="fa-solid fa-satellite"></i> System Status</h3>
+                    <div class="status-metrics">
+                        <div class="s-met">
+                            <span class="s-val" id="ctrl-total-jobs">0</span>
+                            <span class="s-lab">Live Jobs</span>
                         </div>
-                        <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" id="modal-progress-bar" style="width: 0%"></div>
+                        <div class="s-met">
+                            <span class="s-val red" id="ctrl-delayed-jobs">0</span>
+                            <span class="s-lab">Delayed</span>
+                        </div>
+                        <div class="s-met">
+                            <span class="s-val green" id="ctrl-free-workers">0</span>
+                            <span class="s-lab">Free Workers</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Subpart Stocks Table -->
-                <div class="section-block">
-                    <h4>🧵 Manufacturing Details & Subpart Stocks</h4>
-                    <div class="table-container">
-                        <table class="modal-table">
-                            <thead>
-                                <tr>
-                                    <th>Stage</th>
-                                    <th>Status</th>
-                                    <th>Stock / WIP</th>
-                                    <th>Target</th>
-                                </tr>
-                            </thead>
-                            <tbody id="modal-subparts-body">
-                                <!-- Injected by JS -->
-                            </tbody>
-                        </table>
+                <!-- 2. Command Console (Assignments) -->
+                <div class="control-panel assignment-panel">
+                    <h3><i class="fa-solid fa-crosshairs"></i> Assignment Console</h3>
+                    <div class="assign-form">
+                        <div class="form-group">
+                            <label>Target Job</label>
+                            <select id="ctrl-job-select" class="ctrl-select">
+                                <!-- Injected via JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Production Stage</label>
+                            <select id="ctrl-stage-select" class="ctrl-select">
+                                <option>Embroidery</option>
+                                <option>Stitching</option>
+                                <option>Finishing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Assign Karigar</label>
+                            <select id="ctrl-worker-select" class="ctrl-select">
+                                <!-- Injected via JS -->
+                            </select>
+                        </div>
+                        <button class="cmd-btn primary" onclick="executeAssignment()">Execute assignment</button>
                     </div>
+                </div>
+
+                <!-- 3. Issue Management -->
+                <div class="control-panel issue-panel">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Issue Radar</h3>
+                    <div id="issue-list" class="issue-list">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
+                <!-- 4. Smart Suggestions -->
+                <div class="control-panel suggestion-panel">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Smart Suggestions</h3>
+                    <div id="smart-sugg" class="suggestion-list">
+                        <div class="sugg-item">
+                            <p>Product #1945 is lagging in Stitching. <b>Ramesh</b> is free — suggest reassignment.</p>
+                            <button class="sugg-btn">Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Quick Actions -->
+                <div class="control-panel actions-panel">
+                    <h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-tile" onclick="ctrlAction('create')"><i class="fa-solid fa-plus"></i> Create Job</button>
+                        <button class="action-tile" onclick="ctrlAction('priority')"><i class="fa-solid fa-star"></i> Set Priority</button>
+                        <button class="action-tile" onclick="ctrlAction('stop')"><i class="fa-solid fa-stop"></i> Halt Production</button>
+                        <button class="action-tile" onclick="ctrlAction('sync')"><i class="fa-solid fa-arrows-rotate"></i> Global Sync</button>
+                    </div>
+                </div>
+
+                <!-- 6. Activity Log -->
+                <div class="control-panel log-panel">
+                    <h3><i class="fa-solid fa-list-ul"></i> Command Logs</h3>
+                    <div id="command-log" class="log-container">
+                        <div class="log-entry">System Boot completed. All endpoints synced.</div>
+                        <div class="log-entry">Auto-analysis: 3 bottlenecks detected in Embroidery.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRILL DOWN MODAL -->
+        <div id="drilldown-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="modal-title-area">
+                        <h2 id="m-product-id">Product #17244</h2>
+                        <span id="m-production-code">Code: 17244</span>
+                    </div>
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                </div>
+                
+                <div class="modal-body" id="dynamic-modal-content">
+                    <!-- JS UPDATES GO HERE -->
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Custom JS -->
-    <script src="/static/js/app.js?v=19"></script>
+    <script src="/static/js/app.js?v=1.1"></script>
 </body>
-
 </html>

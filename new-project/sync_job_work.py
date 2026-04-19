@@ -88,7 +88,7 @@ def sync_job_work():
                 "subprocesses": subprocesses
             })
             
-            if len(production_units) >= 2000: # High limit instead of 15
+            if len(production_units) >= 15:
                 break
                 
         with open('mock/job_work.json', 'w') as f:
